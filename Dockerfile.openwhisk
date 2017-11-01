@@ -1,0 +1,8 @@
+FROM alpine:latest
+RUN apk add --update python python-dev gfortran py-pip build-base py-numpy
+RUN pip install --no-cache-dir flask gevent
+COPY flops.py /
+RUN mkdir /actionProxy action
+COPY ep.sh /action/exec
+COPY actionproxy.py /actionProxy
+CMD ["bin/sh","-c","cd actionProxy && python -u actionproxy.py"]                                                                
