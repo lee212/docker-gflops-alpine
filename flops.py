@@ -44,10 +44,11 @@ if __name__ == "__main__":
             r = json.loads(r)
             lc = r['number_of_loop']
             mat_n = r['number_of_matrix']
+            cid = r['cid']
         else:
             lc = int(sys.argv[1])
             mat_n =  int(sys.argv[2])
 
     gflops, time_diff = compute_flops(lc, mat_n)
-    print "{},{},{},{}".format(lc, mat_n, gflops, time_diff)
+    print "{},{},{},{},{}".format(cid, lc, mat_n, gflops, time_diff)
 
