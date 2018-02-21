@@ -1,3 +1,5 @@
 #!/bin/sh
 msg=`python /flops.py $@`
-echo "{\"system\": {\"hostname\":\"$HOSTNAME\"}, \"msg\": \"$msg\", \"arg\":$@}"
+uptime=`uptime`
+curr_time=`date`
+echo "{\"system\": {\"hostname\":\"$HOSTNAME\", \"uptime\":\"$uptime\", \"curr_time\":\"$curr_time\"}, \"msg\": \"$msg\", \"arg\":$@}"
