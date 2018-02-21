@@ -1,3 +1,3 @@
 #!/bin/sh
 msg=`python /flops.py $@`
-echo "{\"msg\": \"$msg\", \"arg\":$@}"
+echo "{\"system\": {\"hostname\":\"$HOSTNAME\"}, \"msg\": \"$msg\", \"arg\":$@}"
